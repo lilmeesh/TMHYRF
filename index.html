@@ -3,107 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tell Me How You Really Feel - A podcast where Hannah and Michelle rate TV shows and movies based on sound, editing, writing, acting, and more.">
+    <meta name="description" content="Tell Me How You Really Feel - A podcast where Hannah and Michelle discuss films with their unique take.">
     <title>Tell Me How You Really Feel</title>
     <style>
         body {
-            font-family: 'Verdana', sans-serif;
-            background-color: #f8e1d4;
-            color: #222;
+            font-family: 'Georgia', serif;
+            background-color: #ece1d8;
+            color: #2f2f2f;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #ff4f81;
-            color: #fff;
+            background-color: #3c3b3b;
+            color: #f4e1c1;
             text-align: center;
-            padding: 40px 20px;
-            background-image: url('https://example.com/hollywood-lights.jpg'); /* You can replace with a real image */
+            padding: 60px 20px;
+            background-image: url('https://example.com/casablanca-background.jpg'); /* Replace with a Casablanca-themed image */
             background-size: cover;
             background-position: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
         header h1 {
-            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
             margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
-        header p {
+        .names {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+        .names div {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+        }
+        .names div::before {
+            content: "🎬";
+            margin-right: 10px;
+            font-size: 2rem;
+            color: #d4af37; /* Golden movie clip sign */
+        }
+        .quote {
+            font-family: 'Courier New', Courier, monospace;
             font-size: 1.2rem;
-            margin-top: 10px;
-            color: #f5c518;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .show {
+            color: #333;
+            margin: 40px;
+            padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            margin-bottom: 40px;
-            transition: transform 0.3s ease;
+            border-left: 5px solid #d4af37;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
             position: relative;
-            border: 3px solid #f5c518;
         }
-        .show:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        .quote::before {
+            content: open-quote;
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: #d4af37;
         }
-        .show h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ff4f81;
+        .quote::after {
+            content: close-quote;
+            font-size: 4rem;
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            color: #d4af37;
         }
-        .criteria-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+        .quotes-container {
             display: flex;
             flex-wrap: wrap;
-        }
-        .criteria-list li {
-            flex: 1 1 45%;
-            margin: 15px 0;
-            font-size: 1.2rem;
-            color: #222;
-        }
-        .criteria-list li::before {
-            content: "⭐ ";
-        }
-        .feelings {
-            margin-top: 30px;
-        }
-        .feelings h3 {
-            color: #ff4f81;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        .feelings p {
-            background-color: #f8f8f8;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            justify-content: space-around;
+            padding: 20px;
         }
         footer {
-            background-color: #ff4f81;
-            color: #fff;
+            background-color: #3c3b3b;
+            color: #f4e1c1;
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             margin-top: 40px;
-            border-top: 5px solid #f5c518;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
-        }
-        footer p {
-            margin: 0;
-            font-size: 1rem;
+            border-top: 5px solid #d4af37;
         }
     </style>
 </head>
@@ -111,31 +93,31 @@
 
     <header>
         <h1>Tell Me How You Really Feel</h1>
-        <p>Hannah & Michelle's Red Carpet Ratings of TV & Movies</p>
+        <div class="names">
+            <div>Michelle</div>
+            <div>Hannah</div>
+        </div>
     </header>
 
-    <div class="content">
-        <div class="show">
-            <h2>Movie/Show Title</h2>
-            <ul class="criteria-list">
-                <li><strong>Sound:</strong> 8/10</li>
-                <li><strong>Editing:</strong> 7/10</li>
-                <li><strong>Writing:</strong> 9/10</li>
-                <li><strong>Acting:</strong> 9/10</li>
-                <li><strong>Directing:</strong> 10/10</li>
-                <li><strong>Cinematography:</strong> 9/10</li>
-            </ul>
-
-            <div class="feelings">
-                <h3>Hannah's Feelings:</h3>
-                <p>"I loved the direction and pacing, but the writing could have been sharper in some moments!"</p>
-
-                <h3>Michelle's Feelings:</h3>
-                <p>"The cinematography was beautiful, but I was a bit disappointed by the sound design!"</p>
-            </div>
+    <div class="quotes-container">
+        <div class="quote">
+            "I just have this feeling like your life could be a lot less complicated than you think." - Everything Everywhere All At Once
         </div>
-
-        <!-- Add more shows/movies with the same format -->
+        <div class="quote">
+            "Here’s looking at you, kid." - Casablanca
+        </div>
+        <div class="quote">
+            "Well, if I wasn’t, I am now." - Banshees of Inisherin
+        </div>
+        <div class="quote">
+            "I did it for the money. I did it for the thrill of it." - Double Indemnity
+        </div>
+        <div class="quote">
+            "They were looking at you and me when they wrote it." - Guess Who’s Coming to Dinner
+        </div>
+        <div class="quote">
+            "The chaos theory is unpredictable." - Kaos
+        </div>
     </div>
 
     <footer>
@@ -144,4 +126,3 @@
 
 </body>
 </html>
-
