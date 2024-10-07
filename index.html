@@ -21,6 +21,7 @@
             background-image: url('https://example.com/casablanca-background.jpg'); /* Replace with a Casablanca-themed image */
             background-size: cover;
             background-position: center;
+            position: relative;
         }
         header h1 {
             font-family: 'Playfair Display', serif;
@@ -57,6 +58,28 @@
             color: #f4e1c1;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
+
+        /* Camera Animation */
+        .camera {
+            position: absolute;
+            top: 10px;
+            left: -100px;
+            width: 80px;
+            height: 80px;
+            animation: moveCamera 10s infinite;
+        }
+        @keyframes moveCamera {
+            0% {
+                left: -100px;
+            }
+            50% {
+                left: calc(100% - 100px);
+            }
+            100% {
+                left: -100px;
+            }
+        }
+
         .quote {
             font-family: 'Courier New', Courier, monospace;
             font-size: 1.2rem;
@@ -111,6 +134,15 @@
             <div>Hannah</div>
         </div>
         <div class="podcast-time">Wednesday Mornings whenever you feel like it</div>
+
+        <!-- Camera Animation SVG -->
+        <div class="camera">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#d4af37" width="80px" height="80px">
+                <path d="M9,4H4V2H2v20h2v-2h18V9H15l-2-3H9V4z M4,18V9h1v9H4z M7,18V9h1v9H7z M14,18H9V9h1v7h3V9h1V18z M22,18h-6V9h1v9h5V18z"/>
+                <circle cx="18" cy="13" r="2"/>
+                <circle cx="12" cy="13" r="2"/>
+            </svg>
+        </div>
     </header>
 
     <div class="quotes-container">
@@ -140,3 +172,4 @@
 
 </body>
 </html>
+
